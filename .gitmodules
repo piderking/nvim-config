@@ -43,6 +43,6 @@
 [submodule "plugins/friendly-snippets"]
 	path = plugins/friendly-snippets
 	url = https://github.com/rafamadriz/friendly-snippets
-[submodule "plugins/plugins/nvim-cmp"]
-	path = plugins/plugins/nvim-cmp
+[submodule "plugins/nvim-cmp"]
+	path = plugins/nvim-cmp
 	url = https://github.com/hrsh7th/nvim-cmp
