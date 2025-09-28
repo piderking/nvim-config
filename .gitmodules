@@ -43,3 +43,51 @@
 [submodule "friendly-snippets"]
 	path = plugins/friendly-snippets
 	url = https://github.com/rafamadriz/friendly-snippets
+[submodule "plugins/nvim-lspconfig"]
+	path = plugins/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
+[submodule "plugins/mason.nvim"]
+	path = plugins/mason.nvim
+	url = https://github.com/mason-org/mason.nvim
+[submodule "plugins/mason-lspconfig.nvim"]
+	path = plugins/mason-lspconfig.nvim
+	url = https://github.com/mason-org/mason-lspconfig.nvim
+[submodule "plugins/none-ls.nvim"]
+	path = plugins/none-ls.nvim
+	url = https://github.com/nvimtools/none-ls.nvim
+[submodule "plugins/nvim-treesitter"]
+	path = plugins/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "plugins/conform.nvim"]
+	path = plugins/conform.nvim
+	url = https://github.com/stevearc/conform.nvim
+[submodule "plugins/kanagawa.nvim"]
+	path = plugins/kanagawa.nvim
+	url = https://github.com/rebelot/kanagawa.nvim
+[submodule "plugins/blink.cmp"]
+	path = plugins/blink.cmp
+	url = https://github.com/saghen/blink.cmp
+[submodule "plugins/vim-wakatime"]
+	path = plugins/vim-wakatime
+	url = https://github.com/wakatime/vim-wakatime
+[submodule "plugins/nvim-web-devicons"]
+	path = plugins/nvim-web-devicons
+	url = https://github.com/nvim-tree/nvim-web-devicons
+[submodule "plugins/lualine.nvim"]
+	path = plugins/lualine.nvim
+	url = https://github.com/nvim-lualine/lualine.nvim
+[submodule "plugins/telescope.nvim"]
+	path = plugins/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim
+[submodule "plugins/plenary.nvim"]
+	path = plugins/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim
+[submodule "plugins/tabby.nvim"]
+	path = plugins/tabby.nvim
+	url = https://github.com/nanozuki/tabby.nvim
+[submodule "plugins/friendly-snippets"]
+	path = plugins/friendly-snippets
+	url = https://github.com/rafamadriz/friendly-snippets
+[submodule "plugins/plugins/nvim-cmp"]
+	path = plugins/plugins/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp
