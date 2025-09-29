@@ -1,6 +1,5 @@
 local uv = vim.loop
 local base_path = vim.fn.stdpath("config") .. "/plugins"
-
 -- Make sure the folder exists
 local stat = uv.fs_stat(base_path)
 if stat and stat.type == "directory" then
