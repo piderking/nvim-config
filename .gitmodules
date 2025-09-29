@@ -1,5 +1,6 @@
 [submodule "plugins/nvim-lspconfig"]
 	path = plugins/nvim-lspconfig
+
 	url = https://github.com/neovim/nvim-lspconfig
 [submodule "plugins/mason.nvim"]
 	path = plugins/mason.nvim
@@ -43,6 +44,9 @@
 [submodule "plugins/friendly-snippets"]
 	path = plugins/friendly-snippets
 	url = https://github.com/rafamadriz/friendly-snippets
+[submodule "plugins/telescope-file-browser.nvim"]
+	path = plugins/telescope-file-browser.nvim
+	url = https://github.com/nvim-telescope/telescope-file-browser.nvim
 [submodule "plugins/nvim-cmp"]
 	path = plugins/nvim-cmp
 	url = https://github.com/hrsh7th/nvim-cmp
