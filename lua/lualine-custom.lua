@@ -1,4 +1,3 @@
-
 -- define
 require("lualine").setup({
 	sections = {
@@ -18,6 +17,7 @@ require("lualine").setup({
 			"vim.fn.getcwd()",
 			"filename",
 			"os.date('%Y-%m-%d %H:%M:%S')",
+			
 		},
 		lualine_x = { -- LSP status (attached client name[s])
 			function()
@@ -39,4 +39,3 @@ require("lualine").setup({
 		lualine_z = { "location" },
 	},
 })
-

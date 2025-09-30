@@ -1,6 +1,5 @@
 [submodule "plugins/nvim-lspconfig"]
 	path = plugins/nvim-lspconfig
-
 	url = https://github.com/neovim/nvim-lspconfig
 [submodule "plugins/mason.nvim"]
 	path = plugins/mason.nvim
@@ -50,3 +49,9 @@
 [submodule "plugins/nvim-cmp"]
 	path = plugins/nvim-cmp
 	url = https://github.com/hrsh7th/nvim-cmp
+[submodule "plugins/lazy.nvim"]
+	path = plugins/lazy.nvim
+	url = https://github.com/folke/lazy.nvim.git
+[submodule "plugins/vim-commentary"]
+	path = plugins/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git

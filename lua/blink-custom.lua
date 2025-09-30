@@ -1,6 +1,6 @@
 -- lua/plugin/blink-cmp-config.lua
 
-local status_ok, blink = pcall(require, "blink")
+local status_ok, blink = pcall(require, "blink.cmp")
 if not status_ok then
 	vim.notify("blink plugin not found")
 	return
@@ -24,7 +24,8 @@ blink.setup({
 	},
 
 	completion = {
-		documentation = { auto_show = false },
+
+		documentation = { auto_show = true },
 	},
 
 	sources = {
@@ -32,6 +33,9 @@ blink.setup({
 	},
 
 	fuzzy = {
-		implementation = "prefer_rust_with_warning",
+		implementation = "prefer_rust",
 	},
 })
+
+print("Blink Loaded")
+--vim.notify(vim.inspect(require("blink.cmp")), vim.log.levels.INFO)

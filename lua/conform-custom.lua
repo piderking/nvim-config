@@ -1,4 +1,3 @@
-
 -- Conform Setup
 require("conform").setup({
 	format_on_save = {
@@ -15,4 +14,3 @@ require("conform").setup({
 		javascript = { "prettierd", "prettier", stop_after_first = true },
 	},
 })
-
