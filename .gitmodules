@@ -55,3 +55,9 @@
 [submodule "plugins/vim-commentary"]
 	path = plugins/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "plugins/nui.nvim"]
+	path = plugins/nui.nvim
+	url = https://github.com/MunifTanjim/nui.nvim
+[submodule "plugins/noice.nvim"]
+	path = plugins/noice.nvim
+	url = https://github.com/folke/noice.nvim
