@@ -44,6 +44,8 @@ vim.keymap.set("n", "<Space>ts", function()
 	end
 end, { desc = "Toggle Terminal (Right Split)" })
 
+vim.keymap.set("i", "<C-d>", "<C-o>$")
+
 -- Telescope
 vim.keymap.set("n", "<Space>ff", "<cmd> Telescope find_files <CR>")
 local builtin = require("telescope.builtin")

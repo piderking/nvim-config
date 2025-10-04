@@ -61,3 +61,6 @@
 [submodule "plugins/noice.nvim"]
 	path = plugins/noice.nvim
 	url = https://github.com/folke/noice.nvim
+[submodule "plugins/presence.nvim"]
+	path = plugins/presence.nvim
+	url = https://github.com/andweeb/presence.nvim.git
