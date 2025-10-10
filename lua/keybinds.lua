@@ -19,6 +19,9 @@ vim.api.nvim_set_keymap("n", "<Space>tmp", ":-tabmove<CR>", { noremap = true })
 -- move current tab to next position
 vim.api.nvim_set_keymap("n", "<Space>tmn", ":+tabmove<CR>", { noremap = true })
 
+-- Go to definition:w
+--
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
 -- Terminal Intergration
 -- Toggle terminal in right split
 local term_win = nil

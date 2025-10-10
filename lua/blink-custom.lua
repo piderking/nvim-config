@@ -16,7 +16,7 @@ blink.setup({
 				cmp.show({ providers = { "snippets" } })
 			end,
 		},
-		["<Tab>"] = { "select_and_accept" },
+		["<A-Right>"] = { "select_and_accept" },
 	},
 
 	appearance = {
