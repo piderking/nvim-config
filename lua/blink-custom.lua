@@ -16,7 +16,7 @@ blink.setup({
 				cmp.show({ providers = { "snippets" } })
 			end,
 		},
-		["<A-Right>"] = { "select_and_accept" },
+		["<F2>"] = { "select_and_accept" },
 	},
 
 	appearance = {
@@ -34,6 +34,12 @@ blink.setup({
 
 	fuzzy = {
 		implementation = "prefer_rust",
+	},
+	signature = {
+		enabled = true, -- <== enable signature help
+		auto_open = true, -- open as you type inside parentheses
+		floating_window = true, -- show in floating window
+		trigger_chars = { "(", "," },
 	},
 })
 

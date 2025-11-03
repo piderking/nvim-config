@@ -8,6 +8,55 @@ vim.keymap.set("n", "<Space>fb", function()
 	require("telescope").extensions.file_browser.file_browser()
 end)
 
+-- Error
+
+local telescope = require("telescope")
+local builtin = require("telescope.builtin")
+local actions = require("telescope.actions")
+local action_state = require("telescope.actions.state")
+local function diagnostics_jump_to_correct_file()
+	builtin.diagnostics({
+		attach_mappings = function(prompt_bufnr, map)
+			local function jump_to_diagnostic()
+				local entry = action_state.get_selected_entry()
+				actions.close(prompt_bufnr)
+
+				-- Determine buffer
+				local bufnr = entry.bufnr
+				if (not bufnr or not vim.api.nvim_buf_is_loaded(bufnr)) and entry.filename then
+					bufnr = vim.fn.bufadd(entry.filename)
+					vim.fn.bufload(bufnr)
+				end
+
+				-- Fallback: current buffer
+				if not bufnr or not vim.api.nvim_buf_is_loaded(bufnr) then
+					vim.notify("Cannot find buffer for diagnostic!", vim.log.levels.WARN)
+					return
+				end
+
+				-- Determine line and column
+				local line = entry.lnum or entry.row or 1
+				local col = entry.col or entry.start_col or 0
+				line = tonumber(line) or 1
+				col = tonumber(col) or 0
+				col = math.max(0, col - 1)
+
+				-- Jump to buffer and position
+				vim.api.nvim_set_current_buf(bufnr)
+				vim.api.nvim_win_set_cursor(0, { line, col })
+				vim.cmd("edit") -- ensure buffer shows
+			end
+
+			map("i", "<CR>", jump_to_diagnostic)
+			map("n", "<CR>", jump_to_diagnostic)
+			return true
+		end,
+	})
+end
+
+-- Bind to <Space>q
+vim.keymap.set("n", "<Space>q", diagnostics_jump_to_correct_file, { noremap = true, silent = true })
+vim.keymap.set("n", "<Space>ca", vim.lsp.buf.code_action, { noremap = true, silent = true })
 -- Tabby
 vim.api.nvim_set_keymap("n", "<Space>tt", ":tabnew<CR>", {})
 vim.api.nvim_set_keymap("n", "<Space>tc", ":tabclose<CR>", { noremap = true })
@@ -19,9 +68,25 @@ vim.api.nvim_set_keymap("n", "<Space>tmp", ":-tabmove<CR>", { noremap = true })
 -- move current tab to next position
 vim.api.nvim_set_keymap("n", "<Space>tmn", ":+tabmove<CR>", { noremap = true })
 
--- Go to definition:w
+-- Define keymaps for the LSP features
+local opts = { noremap = true, silent = true, buffer = bufnr }
+
+-- Map <Space> K to the hover function (show documentation/type)
+-- The 'desc' adds a description that can be seen with the 'which-key' plugin.
+
+-- Optional: Add standard LSP keymaps for a full experience
+-- Map gD to go to the declaration
+vim.keymap.set("n", "<Space>gD", vim.lsp.buf.declaration, opts)
+-- Map gd to go to the definition
+vim.keymap.set("n", "<Space>gd", vim.lsp.buf.definition, opts)
+-- Map gi to go to the implementation
+vim.keymap.set("n", "<Space>gi", vim.lsp.buf.implementation, opts)
+-- Map <leader>rn to rename a symbol
+vim.keymap.set("n", "<Space>rn", vim.lsp.buf.rename, opts)
+-- Map <leader>ca to show code actions
+vim.keymap.set({ "n", "v" }, "<Space>ca", vim.lsp.buf.code_action, opts)
+
 --
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
 -- Terminal Intergration
 -- Toggle terminal in right split
 local term_win = nil

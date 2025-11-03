@@ -48,6 +48,10 @@ for _, name in ipairs(vim.fn.readdir(plugins_dir)) do
 		table.insert(plugin_specs, { dir = path })
 	end
 end
+
+-- Settings Set Up
+vim.diagnostic.setqflist({ open = true })
+
 -- Setup lazy.nvim with all detected local plugins
 require("lazy").setup(plugin_specs)
 
